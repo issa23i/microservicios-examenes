@@ -28,4 +28,10 @@ public class ExamenServiceImpl extends CommonServiceImpl<Examen, ExamenRepositor
 		return asignaturaRepository.findAll();
 	}
 
+	@Override
+	@Transactional(readOnly = true)
+	public Iterable<Long> findExamenesIdsConRespuestasByPreguntaIds(Iterable<Long> preguntaIds) {
+		return repository.findExamenesIdsConRespuestasByPreguntaIds(preguntaIds);
+	}
+
 }
